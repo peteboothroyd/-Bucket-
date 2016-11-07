@@ -18,7 +18,7 @@ namespace ToDoTrainingGit
     {
         public static char[] sDelemiters = { ',', '.', '\n', '\t' };
         public static ConcurrentDictionary<string, User> UserDictionary { get; set; }
-        //Arbitrary comment to sync with GitHub
+        
         public int Login(string username, string password)
         {
             Console.WriteLine("Received request to: Login with username: " + username + " password: " + password);
@@ -79,7 +79,7 @@ namespace ToDoTrainingGit
 
         public void ClientChangeTaskTagsRequest(int RandomID, string NewTags)
         {
-            Console.WriteLine("Received request to: Change tags" + RandomID + "with tags: " + NewTags);
+            Console.WriteLine("Received request to: Change tags" + RandomID + " with tags: " + NewTags);
             User mUser = FindUser(Context.ConnectionId);
 
             if (mUser.Tasks.Count == 0)
@@ -144,7 +144,7 @@ namespace ToDoTrainingGit
 
         public void ClientMarkTaskRequest(int RandomID, bool IsChecked)
         {
-            Console.WriteLine("Received request to: Mark Task " + RandomID + "as:" + IsChecked.ToString());
+            Console.WriteLine("Received request to: Mark Task " + RandomID + " as:" + IsChecked.ToString());
             User mUser = FindUser(Context.ConnectionId);
 
             if (mUser.Tasks.Count == 0)
